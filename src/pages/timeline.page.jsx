@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import PageHeader from "../components/PageHeader";
+import PageHeader from "../components/page-header";
 import { TimelinesData } from "@/data"
 import {
   CalendarIcon,
@@ -11,7 +11,7 @@ import {
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
-export default function Timeline() {
+export default function TimelinePage() {
 
   useEffect(() => {
     document.title = "ShreYash - Timeline";

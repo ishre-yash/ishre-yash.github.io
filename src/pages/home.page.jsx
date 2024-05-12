@@ -5,8 +5,9 @@ import { Link } from "react-router-dom";
 import { Icon } from "@iconify/react";
 import Typed from "typed.js";
 import { buttonVariants } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
-export default function Home() {
+export default function HomePage() {
   const el = useRef(null);
   const today = new Date();
   const birthday = new Date("2005-03-12");
@@ -98,9 +99,9 @@ export default function Home() {
                   {!data.external ? (
                     <Link
                       to={data.href}
-                      className={buttonVariants({
+                      className={cn(buttonVariants({
                         variant: "outline",
-                      })}
+                      }), "w-full sm:w-auto")}
                     >
                       {data.icon}
 
@@ -109,9 +110,9 @@ export default function Home() {
                   ) : (
                     <a
                       href={data.href}
-                      className={buttonVariants({
+                      className={cn(buttonVariants({
                         variant: "outline",
-                      })}
+                      }), "w-full sm:w-auto")}
                       rel="noopener noreferrer"
                     >
                       {data.icon}

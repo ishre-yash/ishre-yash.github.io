@@ -8,13 +8,12 @@ import useClick from "@/lib/Sound";
 import Header from "@/layouts/Header";
 import Background from "@/components/background";
 
-import Home from "@/pages/Home";
-import PageNotFound from "@/pages/PageNotFound";
+import HomePage from "@/pages/home.page";
 import About from "@/pages/About";
 import Projects from "@/pages/Projects";
-import Timeline from "@/pages/Timeline";
-import Referrals from "@/pages/Referrals";
 import Status from "@/pages/Status";
+import TimelinePage from "@/pages/timeline.page";
+import ReferralsPage from "@/pages/referrals.page";
 
 function App() {
   const [showAnimation, setShowAnimation] = useState(true);
@@ -45,7 +44,7 @@ function App() {
 
       <AnimatePresence>
         <Routes location={location} key={location.pathname}>
-          <Route path="/" element={<Home setProgress={setProgress} />}></Route>
+          <Route path="/" element={<HomePage />}></Route>
           <Route
             path="/about"
             element={<About setProgress={setProgress} />}
@@ -56,18 +55,17 @@ function App() {
           ></Route>
           <Route
             path="/timeline"
-            element={<Timeline setProgress={setProgress} />}
+            element={<TimelinePage />}
           ></Route>
           <Route
             path="/referrals"
-            element={<Referrals setProgress={setProgress} />}
+            element={<ReferralsPage />}
           ></Route>
           <Route
             path="/status"
             element={<Status setProgress={setProgress} />}
           ></Route>
 
-          <Route path="*" component={<PageNotFound />} />
         </Routes>
       </AnimatePresence>
     </>
