@@ -3,7 +3,7 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import { Points, PointMaterial } from "@react-three/drei";
 import * as random from "maath/random/dist/maath-random.esm";
 
-export default function App() {
+export default function Background() {
     return (
         <div className="fixed inset-0 z-0">
             <Canvas camera={{ position: [0, 0, 2.5] }}>
@@ -21,6 +21,7 @@ function Stars(props) {
         ref.current.rotation.y -= delta / 15;
     });
     return (
+        // eslint-disable-next-line react/no-unknown-property
         <group ref={ref} rotation={[0, 0, Math.PI / 4]}>
             <Points
                 positions={sphere}

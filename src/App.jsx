@@ -6,7 +6,7 @@ import LoadingBar from "react-top-loading-bar";
 
 import useClick from "./lib/Sound";
 import Header from "./layouts/Header";
-import Background from "./components/Background";
+import Background from "./components/background";
 
 import Home from "./pages/Home";
 import PageNotFound from "./pages/PageNotFound";
