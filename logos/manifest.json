@@ -1,0 +1,35 @@
+{
+  "short_name": "SY",
+  "name": "ShreYash - Portfolio",
+  "icons": [
+    {
+      "src": "/logos/favicon.ico",
+      "sizes": "64x64 24x24",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "/logos/favicon-16x16.png",
+      "type": "image/png",
+      "sizes": "16x16"
+    },
+    {
+      "src": "/logos/favicon-32x32.png",
+      "type": "image/png",
+      "sizes": "32x32"
+    },
+    {
+      "src": "/logos/android-chrome-192x192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/logos/android-chrome-512x512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#037EFE",
+  "background_color": "#ffffff"
+}

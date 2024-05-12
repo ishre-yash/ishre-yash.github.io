@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>404 Page Not Found!</title>
+    <style>
+      .button {
+        background-color: #f9fafb;
+        color: #1486ff;
+      }
+      .button:hover {
+        color: #0a7cff;
+        background-color: #f1f2f3;
+      }
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <main
+      class="flex flex-col justify-center bg-gray-50 px-8"
+      style="background-color: #f9fafb"
+    >
+      <div
+        class="relative h-screen px-4 pt-24 pb-20 sm:px-6 sm:pt-16 lg:px-8 lg:pb-28"
+      >
+        <div class="flex min-h-full flex-grow pt-16 pb-12">
+          <div
+            class="mx-auto flex w-full max-w-7xl flex-grow flex-col justify-center px-4 sm:px-6 lg:px-8"
+          >
+            <div class="flex flex-shrink-0 justify-center">
+              <svg
+                class="h-12 w-auto"
+                style="color: #0072ff"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0zM12 9v4m0 4h.01"
+                ></path>
+              </svg>
+            </div>
+            <div class="py-4 text-center">
+              <h1
+                class="mt-2 text-4xl font-extrabold tracking-tight sm:text-5xl"
+                style="color: #282d34"
+              >
+                Whoops!
+              </h1>
+              <p class="mt-8 text-sm font-medium" style="color: #a7a9ac">
+                Looks like you took a wrong turn.<br />The page you're looking
+                for couldn't be found.
+              </p>
+              <div class="mt-6 flex items-center justify-center space-x-4">
+                <button
+                  type="button"
+                  id="back"
+                  class="button flex h-12 items-center justify-center rounded-lg px-8 py-4 text-base font-bold hover:bg-opacity-50"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    aria-hidden="true"
+                    role="img"
+                    class="iconify iconify--feather mr-2"
+                    width="1em"
+                    height="1em"
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M19 12H5m7 7l-7-7l7-7"
+                    ></path></svg
+                  >Back</button
+                ><a
+                  type="link"
+                  href="/"
+                  class="button flex h-12 items-center justify-center rounded-lg px-8 py-4 text-base font-bold hover:bg-opacity-50"
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    aria-hidden="true"
+                    role="img"
+                    class="iconify iconify--feather mr-2"
+                    width="1em"
+                    height="1em"
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 24 24"
+                  >
+                    <g
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                    >
+                      <path
+                        d="m3 9l9-7l9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
+                      ></path>
+                      <path d="M9 22V12h6v10"></path>
+                    </g></svg
+                  >Home</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script>
+      document.querySelector("#back").addEventListener("click", () => {
+        window.location.hash =
+          window.location.lasthash[window.location.lasthash.length - 1];
+        window.location.lasthash.pop();
+      });
+    </script>
+  </body>
+</html>
