@@ -1,0 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+  body {
+    font-family: "Inter", system-ui;
+    @apply bg-gray-50 text-gray-500 antialiased scrollbar-hide selection:bg-gray-900 selection:text-white dark:bg-gray-900 selection:dark:bg-white selection:dark:text-primary-500;
+  }
+}
+
+.bgGradiant {
+  background: linear-gradient(120deg, #037efe 20%, #1cdac6 90%);
+}
