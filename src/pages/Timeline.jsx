@@ -1,110 +1,132 @@
-import React, { useState, useEffect } from "react";
-import Main from "../components/commen/MainSection";
-import PageHeading from "../components/commen/PageHeading";
-import { Icon } from "@iconify/react";
-import { motion } from "framer-motion";
-import Date from "../components/commen/Date";
-import Error from "../components/Modal";
+import { useEffect } from "react";
+import PageHeader from "../components/PageHeader";
+import { TimelinesData } from "@/data"
+import {
+  CalendarIcon,
+  ExternalLink,
+  PencilRulerIcon,
+  ServerCogIcon,
+  SmartphoneIcon,
+} from "lucide-react";
+import { buttonVariants } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
-export default function Timeline({ setProgress }) {
+export default function Timeline() {
+
   useEffect(() => {
     document.title = "ShreYash - Timeline";
   }, []);
 
   return (
     <>
-      <Main>
-        <PageHeading title="Timeline" />
-        <Timelines setProgress={setProgress} />
-      </Main>
-    </>
-  );
-}
+      <PageHeader title="My Journey"
+        description="Step into my world and travel through time. This timeline captures the milestones, experiences, and adventures that have shaped my journey in the tech universe. From my earliest coding endeavors to my latest achievements, let's embark on this chronological adventure together."
+      >
+        <section className="grid md:grid-cols-3 gap-8 items-center justify-center mb-8">
+          <section className="p-4 md:p-8 border-2 rounded-md bg-background/20 backdrop-blur h-full transition duration-200 ease-in-out hover:-translate-y-1">
+            <div className="flex items-center justify-center">
+              <div className="flex items-center justify-center rounded-full bg-primary/20 backdrop-blur p-2 w-12 h-12">
+                <ServerCogIcon size={24} className="text-primary" />
+              </div>
+              <h2 className="text-4xl font-bold ml-2">
+                {new Date().getFullYear() - 2021}
+              </h2>
+            </div>
 
-function Timelines({ setProgress }) {
-  const [data, setData] = useState([]);
-  const [error, setError] = useState(false);
+            <p className="text-center text-muted-foreground leading-7 [&:not(:first-child)]:mt-6">
+              Years of experience in Full Stack Development.
+            </p>
+          </section>
+          <section className="p-4 md:p-8 border-2 rounded-md bg-background/20 backdrop-blur h-full transition duration-200 ease-in-out hover:-translate-y-1">
+            <div className="flex items-center justify-center">
+              <div className="flex items-center justify-center rounded-full bg-primary/20 backdrop-blur p-2 w-12 h-12">
+                <PencilRulerIcon size={24} className="text-primary" />
+              </div>
+              <h2 className="text-4xl font-bold ml-2">
+                {new Date().getFullYear() - 2021}
+              </h2>
+            </div>
 
-  const getTimeline = async () => {
-    setProgress(30);
-    const options = { method: "GET" };
-    fetch("https://ishre-yash.github.io/api/portfolio/timeline/", options)
-      .then((response) => response.json())
-      .then((response) => {
-        setData(response);
-        setProgress(60);
-        setTimeout(() => {
-          setProgress(100);
-        }, 250);
-      })
-      .catch((err) => {
-        setError(true);
-        setProgress(100);
-      });
-  };
-  useEffect(() => {
-    getTimeline();
-    // eslint-disable-next-line
-  }, []);
+            <p className="text-center text-muted-foreground leading-7 [&:not(:first-child)]:mt-6">
+              Years of experience in Design and UI/UX.
+            </p>
+          </section>
+          <section className="p-4 md:p-8 border-2 rounded-md bg-background/20 backdrop-blur h-full transition duration-200 ease-in-out hover:-translate-y-1">
+            <div className="flex items-center justify-center">
+              <div className="flex items-center justify-center rounded-full bg-primary/20 backdrop-blur p-2 w-12 h-12">
+                <SmartphoneIcon size={24} className="text-primary" />
+              </div>
+              <h2 className="text-4xl font-bold ml-2">
+                {new Date().getFullYear() - 2022}
+              </h2>
+            </div>
 
-  return (
-    <>
-      {error && <Error />}
-      <ul className="-mb-8">
-        {data.map((event, index) => (
-          <motion.li
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{
-              delay: 0.25 * index,
-            }}
-            className="my-1"
-            key={event.title}
-          >
-            <div className="relative pb-8">
-              {index !== data.length - 1 && (
-                <span
-                  aria-hidden="true"
-                  className="absolute top-1 left-1/2 -ml-px h-full w-0.5 bg-gray-200 dark:bg-gray-600"
-                />
-              )}
-
-              <div className="relative flex items-center space-x-3 rounded-lg border-2 border-gray-200 bg-gray-50 bg-opacity-75 px-2 py-3 backdrop-blur-sm backdrop-filter dark:border-gray-600 dark:bg-gray-900 dark:bg-opacity-75">
-                <div className="relative mx-2 flex h-12 w-12 items-center justify-center rounded-full bg-primary-500 bg-opacity-[.15] px-1 saturate-200 backdrop-blur-sm backdrop-filter">
-                  <Icon
+            <p className="text-center text-muted-foreground leading-7 [&:not(:first-child)]:mt-6">
+              Years of experience in Mobile Development.
+            </p>
+          </section>
+        </section>
+        <ul className="max-w-2xl">
+          {TimelinesData.map((t, i) => (
+            <li className="my-1 group" key={i}>
+              <div className="relative pb-8">
+                {i !== TimelinesData.length - 1 && (
+                  <span
                     aria-hidden="true"
-                    className="h-6 w-6 text-primary-500"
-                    icon={event.icon}
+                    className="absolute top-1 left-1/2 -ml-px h-full w-0.5 bg-border"
                   />
-                </div>
+                )}
 
-                <div className="min-w-0 flex-1">
-                  <h3 className="mb-2 flex flex-wrap justify-between text-lg font-bold tracking-tight text-gray-500 dark:text-white">
-                    <span>{event.title}</span>
-                    <span className="flex-1 sm:hidden" />
-                    <Date date={event.date} />
-                  </h3>
-                  <p className="my-2 text-base text-gray-300">
-                    {event.description}
-                  </p>
+                <div className="relative flex items-center space-x-3 rounded-lg border-2 bg-background/20 px-2 py-3 backdrop-blur  transition duration-200 ease-in-out group-hover:-translate-y-1  group-hover:backdrop-blur-md group-hover:shadow-lg">
+                  <div className="relative mx-2 flex h-12 w-12  items-center justify-center rounded-full bg-primary/20 backdrop-blur px-1">
+                    {t.icon}
+                  </div>
 
-                  {event.link && (
-                    <a
-                      className="default-transition default-focus mt-2 inline-flex w-full cursor-pointer items-center justify-center rounded-lg border-2 border-gray-200 bg-gray-50 bg-opacity-75 px-4 py-1 text-sm font-medium text-gray-400 saturate-200 backdrop-blur-sm backdrop-filter hover:bg-gray-100 hover:bg-opacity-75 hover:text-gray-500 dark:border-gray-700 dark:bg-gray-900 dark:bg-opacity-75 dark:text-primary-500 dark:hover:bg-gray-800 dark:hover:bg-opacity-75 dark:hover:text-primary-400 sm:w-auto"
-                      href={event.link.url}
-                      rel="noopener noreferrer"
-                      target="_blank"
-                    >
-                      {event.link.text}
-                      <Icon className="ml-3" icon="feather:external-link" />
-                    </a>
-                  )}
+                  <div className="flex-1">
+                    <h3 className="flex flex-wrap justify-between scroll-m-20 text-xl font-bold tracking-tight gap-2 sm:gap-0">
+                      <span>{t.title}</span>
+                      <span className="flex-1 sm:hidden" />
+                      <div
+                        className={cn(
+                          buttonVariants({
+                            variant: "secondary",
+                            size: "sm",
+                          }),
+                          "gap-2 w-full sm:w-auto backdrop-blur bg-background/20 border mb-2"
+                        )}
+                      >
+                        <CalendarIcon size={16} />
+                        {t.date}
+                      </div>
+                    </h3>
+                    <p className="leading-7 text-muted-foreground [&:not(:first-child)]:mb-2">
+                      {t.description}
+                    </p>
+
+                    {t.link && (
+                      <a
+                        className={cn(
+                          buttonVariants({
+                            variant: "outline",
+                            size: "sm",
+                          }),
+                          "gap-2 backdrop-blur bg-background/20 border"
+                        )}
+                        href={t.link.url}
+                        rel="noopener noreferrer"
+                        target="_blank"
+                      >
+                        {t.link.text}
+                        <ExternalLink size={14} />
+                      </a>
+                    )}
+                  </div>
                 </div>
               </div>
-            </div>
-          </motion.li>
-        ))}
-      </ul>
+            </li>
+          ))}
+        </ul>
+      </PageHeader>
     </>
   );
 }

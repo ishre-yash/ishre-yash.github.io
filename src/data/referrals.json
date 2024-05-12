@@ -1,0 +1,20 @@
+[
+  {
+    "bonus": "Free $100 credit over 60 days",
+    "code": "81fa220bbbe0",
+    "color": "#0069ff",
+    "description": "Cloud platform to deploy, manage & scale applications",
+    "homepage": "https://www.digitalocean.com/",
+    "icon": "heroicons-outline:server",
+    "name": "DigitalOcean",
+    "url": "https://m.do.co/c/"
+  },
+  {
+    "color": "black",
+    "description": "Develop. Preview. Ship.",
+    "homepage": "https://vercel.com/home",
+    "icon": "heroicons-outline:cloud",
+    "name": "Vercel",
+    "url": "https://vercel.com/home"
+  }
+]

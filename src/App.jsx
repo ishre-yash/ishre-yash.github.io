@@ -4,17 +4,17 @@ import { AnimatePresence } from "framer-motion";
 import { useEvent } from "react-use";
 import LoadingBar from "react-top-loading-bar";
 
-import useClick from "./lib/Sound";
-import Header from "./layouts/Header";
-import Background from "./components/background";
+import useClick from "@/lib/Sound";
+import Header from "@/layouts/Header";
+import Background from "@/components/background";
 
-import Home from "./pages/Home";
-import PageNotFound from "./pages/PageNotFound";
-import About from "./pages/About";
-import Projects from "./pages/Projects";
-import Timeline from "./pages/Timeline";
-import Referrals from "./pages/Referrals";
-import Status from "./pages/Status";
+import Home from "@/pages/Home";
+import PageNotFound from "@/pages/PageNotFound";
+import About from "@/pages/About";
+import Projects from "@/pages/Projects";
+import Timeline from "@/pages/Timeline";
+import Referrals from "@/pages/Referrals";
+import Status from "@/pages/Status";
 
 function App() {
   const [showAnimation, setShowAnimation] = useState(true);
@@ -22,7 +22,6 @@ function App() {
   const location = useLocation();
   const [progress, setProgress] = useState(0);
 
-  // useSound
   const [play] = useClick();
   useEvent("mousedown", () => play());
 
