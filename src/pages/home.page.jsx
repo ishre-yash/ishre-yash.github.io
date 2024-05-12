@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import { differenceInYears } from "date-fns";
+import { differenceInYears } from "@/lib/utils";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import Typed from "typed.js";

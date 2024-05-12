@@ -13,13 +13,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@iconify/react": "^3.2.2",
     "@radix-ui/react-slot": "^1.0.2",
     "@react-three/drei": "^9.21.0",
     "@react-three/fiber": "^8.3.1",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
-    "date-fns": "^2.29.1",
     "framer-motion": "^7.1.0",
     "gh-pages": "^6.1.1",
     "lucide-react": "^0.378.0",
@@ -28,9 +26,10 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.3.0",
-    "react-use": "^17.4.0",
     "tailwind-merge": "^2.3.0",
     "tailwindcss-animate": "^1.0.7",
+    "three": "^0.164.1",
+    "typed.js": "^2.1.0",
     "use-sound": "^4.0.1",
     "zustand": "^4.5.2"
   },
