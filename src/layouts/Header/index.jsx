@@ -1,7 +1,22 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { Icon } from "@iconify/react";
 import { useTheme } from "next-themes";
+import { MenuIcon } from "lucide-react";
+import { SettingsIcon } from "lucide-react";
+import { MoonIcon } from "lucide-react";
+import { SunIcon } from "lucide-react";
+import { MonitorIcon } from "lucide-react";
+import { CircleIcon } from "lucide-react";
+import { CircleCheckBigIcon } from "lucide-react";
+import { Volume1Icon } from "lucide-react";
+import { VolumeXIcon } from "lucide-react";
+import { ImageIcon } from "lucide-react";
+import { GithubIcon } from "lucide-react";
+import { LinkIcon } from "lucide-react";
+import { TwitterIcon } from "lucide-react";
+import { HomeIcon } from "lucide-react";
+import { ClockIcon } from "lucide-react";
+import { CopyIcon } from "lucide-react";
 
 function Index({ showAnimation, setShowAnimation, useSound, setUseSound }) {
   const { theme, setTheme } = useTheme();
@@ -28,42 +43,37 @@ function Index({ showAnimation, setShowAnimation, useSound, setUseSound }) {
   const [menu] = useState([
     {
       href: "/",
-      icon: "feather:home",
+      icon: <HomeIcon className="mr-3 h-5 w-5" />,
       text: "Home",
     },
     {
-      href: "/about",
-      icon: "feather:user",
-      text: "About",
-    },
-    {
       href: "/projects",
-      icon: "feather:copy",
+      icon: <CopyIcon className="mr-3 h-5 w-5" />,
       text: "Projects",
     },
     {
       href: "/timeline",
-      icon: "feather:clock",
+      icon: <ClockIcon className="mr-3 h-5 w-5" />,
       text: "Timeline",
     },
     {
       href: "/referrals",
-      icon: "feather:link",
+      icon: <LinkIcon className="mr-3 h-5 w-5" />,
       text: "Referrals",
     },
   ]);
   const [social] = useState([
     {
       href: "https://twitter.com/ishre_yash",
-      icon: "feather:twitter",
+      icon: <TwitterIcon className="mr-3 h-5 w-5" />,
       text: "Twitter",
-      iconLink: "feather:external-link",
+      iconLink: <LinkIcon className="mr-3 h-5 w-5" />,
     },
     {
       href: "https://github.com/ishre-yash",
-      icon: "feather:github",
+      icon: <GithubIcon className="mr-3 h-5 w-5" />,
       text: "GitHub",
-      iconLink: "feather:external-link",
+      iconLink: <LinkIcon className="mr-3 h-5 w-5" />,
     },
   ]);
   return (
@@ -77,17 +87,15 @@ function Index({ showAnimation, setShowAnimation, useSound, setUseSound }) {
               aria-label="Menu"
               type="button"
             >
-              <Icon
-                icon="feather:menu"
+              <MenuIcon
                 className=" my-1 h-4 w-4 fill-current"
               />
             </button>
             <div
-              className={`transition ease-in-out  ${
-                show
-                  ? "scale-100 transform opacity-100 "
-                  : "scale-0 transform opacity-0"
-              }`}
+              className={`transition ease-in-out  ${show
+                ? "scale-100 transform opacity-100 "
+                : "scale-0 transform opacity-0"
+                }`}
             >
               <div
                 className="absolute left-0 mt-2 w-[calc(100vw-1rem)] origin-top-left divide-y divide-gray-100 rounded-md border border-gray-100 bg-gray-50 bg-opacity-75 shadow-lg backdrop-blur-sm backdrop-filter focus:outline-none dark:divide-gray-500 dark:border-gray-500 dark:bg-gray-900 dark:bg-opacity-75 sm:w-56"
@@ -103,8 +111,7 @@ function Index({ showAnimation, setShowAnimation, useSound, setUseSound }) {
                         className="default-transition group flex cursor-pointer items-center bg-opacity-[50] px-4 py-3 text-sm font-medium tracking-wide text-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:hover:bg-gray-800 dark:hover:text-white"
                         role="menuitem"
                       >
-                        <Icon className="mr-3 h-5 w-5" icon={m.icon} />
-
+                        {m.icon}
                         {m.text}
                       </Link>
                     );
@@ -122,30 +129,13 @@ function Index({ showAnimation, setShowAnimation, useSound, setUseSound }) {
                         target="_blank"
                         role="menuitem"
                       >
-                        <Icon className="mr-3 h-5 w-5" icon={s.icon} />
-
+                        {s.icon}
                         {s.text}
                         <span className="flex-1"></span>
-                        <Icon className="mr-3 h-5 w-5" icon={s.iconLink} />
+                        {s.iconLink}
                       </a>
                     );
                   })}
-                </div>
-                <div className="py-2" role="none">
-                  <Link
-                    to="/status"
-                    className="default-transition group flex cursor-pointer items-center bg-opacity-[50] px-4 py-3 text-sm font-medium tracking-wide text-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:hover:bg-gray-800 dark:hover:text-white"
-                    role="menuitem"
-                    onClick={() => setShow(!show)}
-                  >
-                    <span className="relative mr-3 inline-flex h-5 w-5 items-center justify-center">
-                      <span className="absolute flex h-3 w-3">
-                        <span className="absolute inline-flex h-full w-full rounded-full bg-[#f87171] opacity-75 motion-safe:animate-ping"></span>
-                        <span className="relative inline-flex h-3 w-3 rounded-full bg-[#ef4444]" />
-                      </span>
-                    </span>
-                    Status
-                  </Link>
                 </div>
               </div>
             </div>
@@ -157,14 +147,13 @@ function Index({ showAnimation, setShowAnimation, useSound, setUseSound }) {
               aria-label="Settings"
               type="button"
             >
-              <Icon icon="feather:settings" className=" my-1 h-4 w-4" />
+              <SettingsIcon className=" my-1 h-4 w-4" />
             </button>
             <div
-              className={`transition ease-in-out ${
-                settings
-                  ? " scale-100 transform  opacity-100"
-                  : "scale-0 transform opacity-0"
-              }`}
+              className={`transition ease-in-out ${settings
+                ? " scale-100 transform  opacity-100"
+                : "scale-0 transform opacity-0"
+                }`}
             >
               <div
                 className="absolute right-0 mt-2 w-[calc(100vw-1rem)] origin-top-right divide-y divide-gray-100 rounded-md border border-gray-100 bg-gray-50 bg-opacity-75 shadow-lg backdrop-blur-sm backdrop-filter focus:outline-none dark:divide-gray-500 dark:border-gray-500 dark:bg-gray-900 dark:bg-opacity-75 sm:w-56"
@@ -179,18 +168,18 @@ function Index({ showAnimation, setShowAnimation, useSound, setUseSound }) {
                     className="default-transition group flex cursor-pointer items-center bg-opacity-[50] px-4 py-3 text-sm font-medium tracking-wide text-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:hover:bg-gray-800 dark:hover:text-white"
                     role="menuitem"
                   >
-                    <Icon className="mr-3 h-5 w-5" icon="feather:image" />
+                    <ImageIcon className="mr-3 h-5 w-5" />
                     Animations {showAnimation ? "on" : "off"}
                     <span className="flex-1"></span>
                     {showAnimation ? (
                       <>
-                        <Icon
+                        <CircleCheckBigIcon
                           className=" ml-3 h-4 w-4"
                           icon="feather:check-circle"
                         />
                       </>
                     ) : (
-                      <Icon className="ml-3 h-4 w-4" icon="feather:circle" />
+                      <CircleIcon className="ml-3 h-4 w-4" />
                     )}
                   </div>
                   <div
@@ -202,19 +191,21 @@ function Index({ showAnimation, setShowAnimation, useSound, setUseSound }) {
                     role="menuitem"
                   >
                     {useSound ? (
-                      <Icon className="mr-3 h-5 w-5" icon="feather:volume-2" />
+                      <Volume1Icon className="mr-3 h-5 w-5" />
                     ) : (
-                      <Icon className="mr-3 h-5 w-5" icon="feather:volume-x" />
+                      <VolumeXIcon className="mr-3 h-5 w-5" />
                     )}
                     Sound {useSound ? "on" : "off"}
                     <span className="flex-1"></span>
                     {useSound ? (
-                      <Icon
-                        className=" ml-3 h-4 w-4"
-                        icon="feather:check-circle"
-                      />
+                      <>
+                        <CircleCheckBigIcon
+                          className=" ml-3 h-4 w-4"
+                          icon="feather:check-circle"
+                        />
+                      </>
                     ) : (
-                      <Icon className="ml-3 h-4 w-4" icon="feather:circle" />
+                      <CircleIcon className="ml-3 h-4 w-4" />
                     )}
                   </div>
                   <div
@@ -239,13 +230,13 @@ function Index({ showAnimation, setShowAnimation, useSound, setUseSound }) {
                     <span className="flex-1"></span>
                     {cookies ? (
                       <>
-                        <Icon
+                        <CircleCheckBigIcon
                           className=" ml-3 h-4 w-4"
                           icon="feather:check-circle"
                         />
                       </>
                     ) : (
-                      <Icon className="ml-3 h-4 w-4" icon="feather:circle" />
+                      <CircleIcon className="ml-3 h-4 w-4" />
                     )}
                   </div>
 
@@ -258,7 +249,7 @@ function Index({ showAnimation, setShowAnimation, useSound, setUseSound }) {
                     className="default-transition group flex cursor-pointer items-center bg-opacity-[50] px-4 py-3 text-sm font-medium tracking-wide text-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:hover:bg-gray-800 dark:hover:text-white"
                     role="menuitem"
                   >
-                    <Icon className="mr-3 h-5 w-5" icon="feather:monitor" />
+                    <MonitorIcon className="mr-3 h-5 w-5" />
                     System Theme
                     {theme === "system" ? (
                       <>
@@ -292,7 +283,7 @@ function Index({ showAnimation, setShowAnimation, useSound, setUseSound }) {
                     className="default-transition group flex cursor-pointer items-center bg-opacity-[50] px-4 py-3 text-sm font-medium tracking-wide text-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:hover:bg-gray-800 dark:hover:text-white"
                     role="menuitem"
                   >
-                    <Icon className="mr-3 h-5 w-5" icon="feather:sun" />
+                    <SunIcon className="mr-3 h-5 w-5" />
                     Light Theme
                     {theme === "light" ? (
                       <>
@@ -326,7 +317,7 @@ function Index({ showAnimation, setShowAnimation, useSound, setUseSound }) {
                     className="default-transition group flex cursor-pointer items-center  bg-opacity-[50] px-4 py-3 text-sm font-medium tracking-wide text-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:hover:bg-gray-800 dark:hover:text-white"
                     role="menuitem"
                   >
-                    <Icon className="mr-3 h-5 w-5" icon="feather:moon" />
+                    <MoonIcon className="mr-3 h-5 w-5" />
                     Dark Theme{" "}
                     {theme === "dark" ? (
                       <>

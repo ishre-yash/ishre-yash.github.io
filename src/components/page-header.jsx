@@ -1,8 +1,13 @@
+import { motion } from "framer-motion";
 
 // eslint-disable-next-line react/prop-types
 export default function PageHeader({ title, description, children }) {
     return (
-        <section className="py-10 flex flex-col items-center justify-center container pt-20">
+        <motion.main
+            initial={{ width: 0 }}
+            animate={{ width: "100%" }}
+            exit={{ x: window.innerWidth, transition: { duration: 0.1 } }}
+            className="z-50 py-10 flex flex-col items-center justify-center container pt-20">
             <div
                 className="max-w-sm text-center mx-auto mb-12 border rounded-md bg-background/20 backdrop-blur py-8 px-6 md:max-w-4xl"
             >
@@ -14,6 +19,6 @@ export default function PageHeader({ title, description, children }) {
                 </p>
             </div>
             {children}
-        </section>
+        </motion.main>
     )
 }

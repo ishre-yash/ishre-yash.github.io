@@ -2,10 +2,12 @@ import { useEffect, useRef } from "react";
 import { differenceInYears } from "date-fns";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { Icon } from "@iconify/react";
 import Typed from "typed.js";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { UserIcon } from "lucide-react";
+import { CopyIcon } from "lucide-react";
+import { GithubIcon } from "lucide-react";
 
 export default function HomePage() {
   const el = useRef(null);
@@ -40,18 +42,18 @@ export default function HomePage() {
   const button = [
     {
       href: "/about",
-      icon: <Icon className="mr-3" icon="feather:user" />,
+      icon: <UserIcon className="mr-3 size-4" />,
       text: "About",
     },
     {
       href: "/projects",
-      icon: <Icon className="mr-3" icon="feather:copy" />,
+      icon: <CopyIcon className="mr-3 size-4" />,
       text: "Projects",
     },
     {
       external: true,
       href: "https://github.com/ishre-yash",
-      icon: <Icon className="mr-3" icon="feather:github" />,
+      icon: <GithubIcon className="mr-3 size-4" />,
       text: "GitHub",
     },
   ];
