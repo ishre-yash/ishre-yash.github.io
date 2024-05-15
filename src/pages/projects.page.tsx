@@ -19,7 +19,7 @@ export default function ProjectsPage() {
           return (
             <div className="group" key={idx}>
               <li
-                className="overflow-hidden rounded-lg border bg-background/25 backdrop-blur transition duration-200 ease-in-out group-hover:-translate-y-1 group-hover:backdrop-blur-md group-hover:shadow-lg"
+                className="overflow-hidden rounded-lg border bg-background/15 backdrop-blur transition duration-200 ease-in-out group-hover:-translate-y-1 group-hover:backdrop-blur-md group-hover:shadow-lg"
                 draggable="true"
               >
                 {p.img && (
@@ -62,7 +62,7 @@ export default function ProjectsPage() {
                           buttonVariants({
                             variant: "outline",
                           }),
-                          "w-full sm:w-auto backdrop-blur bg-background/20 border"
+                          "w-full sm:w-auto backdrop-blur bg-background/15 border"
                         )}
                         aria-label={`${p.title} homepage`}
                         href={p.url}
@@ -79,7 +79,7 @@ export default function ProjectsPage() {
                           buttonVariants({
                             variant: "outline",
                           }),
-                          "w-full sm:w-auto backdrop-blur bg-background/20 border"
+                          "w-full sm:w-auto backdrop-blur bg-background/15 border"
                         )}
                         aria-label="GitHub Repository"
                         href={p.git}

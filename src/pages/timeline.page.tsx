@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import PageHeader from "../components/page-header";
-import { TimelinesData } from "../data"
+import { TimelinesData } from "../data";
 import {
   CalendarIcon,
   ExternalLink,
@@ -12,18 +12,18 @@ import { buttonVariants } from "../components/ui/button";
 import { cn } from "../lib/utils";
 
 export default function TimelinePage() {
-
   useEffect(() => {
     document.title = "ShreYash - Timeline";
   }, []);
 
   return (
     <>
-      <PageHeader title="My Journey"
+      <PageHeader
+        title="My Journey"
         description="Step into my world and travel through time. This timeline captures the milestones, experiences, and adventures that have shaped my journey in the tech universe. From my earliest coding endeavors to my latest achievements, let's embark on this chronological adventure together."
       >
         <section className="grid md:grid-cols-3 gap-8 items-center justify-center mb-8">
-          <section className="p-4 md:p-8 border-2 rounded-md bg-background/20 backdrop-blur h-full transition duration-200 ease-in-out hover:-translate-y-1">
+          <section className="p-4 md:p-8 border-2 rounded-md bg-background/15 backdrop-blur h-full transition duration-200 ease-in-out hover:-translate-y-1">
             <div className="flex items-center justify-center">
               <div className="flex items-center justify-center rounded-full bg-primary/20 backdrop-blur p-2 w-12 h-12">
                 <ServerCogIcon size={24} className="text-primary" />
@@ -37,7 +37,7 @@ export default function TimelinePage() {
               Years of experience in Full Stack Development.
             </p>
           </section>
-          <section className="p-4 md:p-8 border-2 rounded-md bg-background/20 backdrop-blur h-full transition duration-200 ease-in-out hover:-translate-y-1">
+          <section className="p-4 md:p-8 border-2 rounded-md bg-background/15 backdrop-blur h-full transition duration-200 ease-in-out hover:-translate-y-1">
             <div className="flex items-center justify-center">
               <div className="flex items-center justify-center rounded-full bg-primary/20 backdrop-blur p-2 w-12 h-12">
                 <PencilRulerIcon size={24} className="text-primary" />
@@ -51,7 +51,7 @@ export default function TimelinePage() {
               Years of experience in Design and UI/UX.
             </p>
           </section>
-          <section className="p-4 md:p-8 border-2 rounded-md bg-background/20 backdrop-blur h-full transition duration-200 ease-in-out hover:-translate-y-1">
+          <section className="p-4 md:p-8 border-2 rounded-md bg-background/15 backdrop-blur h-full transition duration-200 ease-in-out hover:-translate-y-1">
             <div className="flex items-center justify-center">
               <div className="flex items-center justify-center rounded-full bg-primary/20 backdrop-blur p-2 w-12 h-12">
                 <SmartphoneIcon size={24} className="text-primary" />
@@ -77,7 +77,7 @@ export default function TimelinePage() {
                   />
                 )}
 
-                <div className="relative flex items-center space-x-3 rounded-lg border-2 bg-background/20 px-2 py-3 backdrop-blur  transition duration-200 ease-in-out group-hover:-translate-y-1  group-hover:backdrop-blur-md group-hover:shadow-lg">
+                <div className="relative flex items-center space-x-3 rounded-lg border-2 bg-background/15 px-2 py-3 backdrop-blur  transition duration-200 ease-in-out group-hover:-translate-y-1  group-hover:backdrop-blur-md group-hover:shadow-lg">
                   <div className="relative mx-2 flex h-12 w-12  items-center justify-center rounded-full bg-primary/20 backdrop-blur px-1">
                     {t.icon}
                   </div>
@@ -92,7 +92,7 @@ export default function TimelinePage() {
                             variant: "secondary",
                             size: "sm",
                           }),
-                          "gap-2 w-full sm:w-auto backdrop-blur bg-background/20 border mb-2"
+                          "gap-2 w-full sm:w-auto backdrop-blur bg-background/15 border mb-2"
                         )}
                       >
                         <CalendarIcon size={16} />
@@ -110,7 +110,7 @@ export default function TimelinePage() {
                             variant: "outline",
                             size: "sm",
                           }),
-                          "gap-2 backdrop-blur bg-background/20 border"
+                          "gap-2 backdrop-blur bg-background/15 border"
                         )}
                         href={t.link.url}
                         rel="noopener noreferrer"

@@ -95,7 +95,7 @@ function MainMenu() {
         }`}
       >
         <div
-          className="absolute left-0 mt-2 w-[calc(100vw-1rem)] origin-top-left divide-y divide-input border-input rounded-md border bg-secondary/25 shadow-lg backdrop-blur-sm backdrop-filter sm:w-56"
+          className="absolute left-0 mt-2 w-[calc(100vw-1rem)] origin-top-left divide-y divide-input border-input rounded-md border bg-secondary/25 shadow-lg backdrop-blur backdrop-filter sm:w-56"
           role="menu"
         >
           <div>
@@ -168,7 +168,7 @@ function SettingsMenu() {
             : "scale-0 transform opacity-0"
         }`}
       >
-        <div className="absolute right-0 mt-2 w-[calc(100vw-1rem)] origin-top-right divide-y divide-input border-input rounded-md border bg-secondary/25 shadow-lg backdrop-blur-sm backdrop-filter sm:w-56">
+        <div className="absolute right-0 mt-2 w-[calc(100vw-1rem)] origin-top-right divide-y divide-input border-input rounded-md border bg-secondary/25 shadow-lg backdrop-blur backdrop-filter sm:w-56">
           <div>
             <div
               onClick={() => {
@@ -183,10 +183,7 @@ function SettingsMenu() {
               <span className="flex-1"></span>
               {isAnimation ? (
                 <>
-                  <CircleCheckBigIcon
-                    className=" ml-3 h-4 w-4"
-                    
-                  />
+                  <CircleCheckBigIcon className=" ml-3 h-4 w-4" />
                 </>
               ) : (
                 <CircleIcon className="ml-3 h-4 w-4" />
@@ -209,10 +206,7 @@ function SettingsMenu() {
               <span className="flex-1"></span>
               {isSound ? (
                 <>
-                  <CircleCheckBigIcon
-                    className=" ml-3 h-4 w-4"
-                    
-                  />
+                  <CircleCheckBigIcon className=" ml-3 h-4 w-4" />
                 </>
               ) : (
                 <CircleIcon className="ml-3 h-4 w-4" />
@@ -240,10 +234,7 @@ function SettingsMenu() {
               <span className="flex-1"></span>
               {cookies ? (
                 <>
-                  <CircleCheckBigIcon
-                    className=" ml-3 h-4 w-4"
-                    
-                  />
+                  <CircleCheckBigIcon className=" ml-3 h-4 w-4" />
                 </>
               ) : (
                 <CircleIcon className="ml-3 h-4 w-4" />
