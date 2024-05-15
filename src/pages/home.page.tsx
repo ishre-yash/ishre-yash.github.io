@@ -1,10 +1,10 @@
 import { useEffect, useRef } from "react";
-import { differenceInYears } from "@/lib/utils";
+import { differenceInYears } from "../lib/utils";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import Typed from "typed.js";
-import { buttonVariants } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
+import { buttonVariants } from "../components/ui/button";
+import { cn } from "../lib/utils";
 import { UserIcon } from "lucide-react";
 import { CopyIcon } from "lucide-react";
 import { GithubIcon } from "lucide-react";
@@ -101,9 +101,12 @@ export default function HomePage() {
                   {!data.external ? (
                     <Link
                       to={data.href}
-                      className={cn(buttonVariants({
-                        variant: "outline",
-                      }), "w-full sm:w-auto")}
+                      className={cn(
+                        buttonVariants({
+                          variant: "outline",
+                        }),
+                        "w-full sm:w-auto"
+                      )}
                     >
                       {data.icon}
 
@@ -112,9 +115,12 @@ export default function HomePage() {
                   ) : (
                     <a
                       href={data.href}
-                      className={cn(buttonVariants({
-                        variant: "outline",
-                      }), "w-full sm:w-auto")}
+                      className={cn(
+                        buttonVariants({
+                          variant: "outline",
+                        }),
+                        "w-full sm:w-auto"
+                      )}
                       rel="noopener noreferrer"
                     >
                       {data.icon}
@@ -128,6 +134,6 @@ export default function HomePage() {
           </div>
         </section>
       </div>
-    </motion.main >
+    </motion.main>
   );
 }

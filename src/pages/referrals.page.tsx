@@ -1,8 +1,8 @@
 import { useEffect } from "react";
-import { ReferralsData } from "@/data"
+import { ReferralsData } from "../data"
 import PageHeader from "../components/page-header";
-import { buttonVariants } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
+import { buttonVariants } from "../components/ui/button";
+import { cn } from "../lib/utils";
 import { AwardIcon, ExternalLinkIcon, HashIcon, HomeIcon } from "lucide-react";
 
 export default function ReferralsPage() {

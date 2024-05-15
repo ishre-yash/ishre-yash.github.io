@@ -1,19 +1,20 @@
 import { Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
+// @ts-ignore
+import useClick from "./lib/sound";
+// @ts-ignore
+import Background from "./components/background";
+import Header from "./components/header";
 
-import useClick from "@/lib/sound";
-import Header from "@/components/header";
-import Background from "@/components/background";
-
-import HomePage from "@/pages/home.page";
-import ProjectsPage from "@/pages/projects.page";
-import TimelinePage from "@/pages/timeline.page";
-import ReferralsPage from "@/pages/referrals.page";
-import useMyStore from "@/store";
+import HomePage from "./pages/home.page";
+import ProjectsPage from "./pages/projects.page";
+import TimelinePage from "./pages/timeline.page";
+import ReferralsPage from "./pages/referrals.page";
+import useMyStore from "./store";
 import { useEffect } from "react";
 
 function App() {
-  const { isAnimation, isSound } = useMyStore()
+  const { isAnimation, isSound } = useMyStore();
   const location = useLocation();
 
   const [play] = useClick();
@@ -31,28 +32,16 @@ function App() {
 
   return (
     <>
-      <Header
-      />
+      <Header />
 
       {isAnimation ? <Background /> : ""}
-
-
 
       <AnimatePresence>
         <Routes location={location} key={location.pathname}>
           <Route path="/" element={<HomePage />}></Route>
-          <Route
-            path="/projects"
-            element={<ProjectsPage />}
-          ></Route>
-          <Route
-            path="/timeline"
-            element={<TimelinePage />}
-          ></Route>
-          <Route
-            path="/referrals"
-            element={<ReferralsPage />}
-          ></Route>
+          <Route path="/projects" element={<ProjectsPage />}></Route>
+          <Route path="/timeline" element={<TimelinePage />}></Route>
+          <Route path="/referrals" element={<ReferralsPage />}></Route>
         </Routes>
       </AnimatePresence>
     </>

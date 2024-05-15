@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import PageHeader from "../components/page-header";
-import { TimelinesData } from "@/data"
+import { TimelinesData } from "../data"
 import {
   CalendarIcon,
   ExternalLink,
@@ -8,8 +8,8 @@ import {
   ServerCogIcon,
   SmartphoneIcon,
 } from "lucide-react";
-import { buttonVariants } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
+import { buttonVariants } from "../components/ui/button";
+import { cn } from "../lib/utils";
 
 export default function TimelinePage() {
 

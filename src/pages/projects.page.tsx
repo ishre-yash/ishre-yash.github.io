@@ -1,8 +1,8 @@
 import { useEffect } from "react";
 import PageHeader from "../components/page-header";
-import { ProjectsData } from "@/data";
-import { buttonVariants } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
+import { ProjectsData } from "../data";
+import { buttonVariants } from "../components/ui/button";
+import { cn } from "../lib/utils";
 import { GithubIcon, HomeIcon } from "lucide-react";
 
 export default function ProjectsPage() {
@@ -100,4 +100,3 @@ export default function ProjectsPage() {
     </PageHeader>
   );
 }
-
