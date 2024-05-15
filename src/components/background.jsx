@@ -2,6 +2,7 @@ import { useRef, useMemo } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Points, PointMaterial } from "@react-three/drei";
 import * as random from "maath/random/dist/maath-random.esm";
+import { useTheme } from "next-themes";
 
 export default function Background() {
     return (
@@ -13,13 +14,20 @@ export default function Background() {
 
     );
 }
+
+
 function Stars(props) {
+    const { theme } = useTheme();
+
     const ref = useRef();
     const sphere = useMemo(() => random.inSphere(new Float32Array(500), { radius: 2 }), [])
     useFrame((state, delta) => {
         ref.current.rotation.x -= delta / 10;
         ref.current.rotation.y -= delta / 15;
     });
+
+    const color = theme === "dark" ? "#fff" : "#000";
+
     return (
         // eslint-disable-next-line react/no-unknown-property
         <group ref={ref} rotation={[0, 0, Math.PI / 4]}>
@@ -31,7 +39,7 @@ function Stars(props) {
             >
                 <PointMaterial
                     transparent
-                    color="#0072ff"
+                    color={color}
                     size={0.050}
                     sizeAttenuation={true}
                     depthWrite={false}
