@@ -76,7 +76,7 @@ function MainMenu() {
     },
   ];
   return (
-    <div className="relative inline-block text-left">
+    <div className="relative inline-block text-left ">
       <Button variant="outline" onClick={() => setOpenMenu(!openMenu)}>
         <MenuIcon className="size-5" />
       </Button>
@@ -147,13 +147,13 @@ function SettingsMenu() {
   const [settings, setSettings] = useState(false);
 
   return (
-    <section className="relative inline-block text-left">
+    <section className="relative inline-block text-left z-0">
       <Button
         variant="outline"
-        className="z-0"
+        className="z-0 group"
         onClick={() => setSettings(!settings)}
       >
-        <SettingsIcon className="size-5" />
+        <SettingsIcon className="size-5 group-hover:animate-spin" />
       </Button>
       {settings && (
         <div

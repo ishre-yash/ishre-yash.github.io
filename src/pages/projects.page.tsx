@@ -19,7 +19,7 @@ export default function ProjectsPage() {
           return (
             <div className="group" key={idx}>
               <li
-                className="overflow-hidden rounded-lg border bg-background/15 backdrop-blur transition duration-200 ease-in-out group-hover:-translate-y-1 group-hover:backdrop-blur-md group-hover:shadow-lg"
+                className="overflow-hidden rounded-2xl border bg-background/15 backdrop-blur transition duration-200 ease-in-out group-hover:-translate-y-1 group-hover:backdrop-blur-md group-hover:shadow-lg"
                 draggable="true"
               >
                 {p.img && (

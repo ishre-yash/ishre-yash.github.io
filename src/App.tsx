@@ -36,7 +36,7 @@ function App() {
     <>
       <Header />
       {isAnimation ? <Background /> : ""}
-
+      <div className="background-pattern" />
       <React.Suspense
         fallback={
           <section className="fixed inset-0 flex items-center justify-center bg-background/15 backdrop-blur z-50">

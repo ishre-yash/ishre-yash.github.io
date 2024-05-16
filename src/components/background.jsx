@@ -6,7 +6,7 @@ import { useTheme } from "next-themes";
 
 export default function Background() {
   return (
-    <div className="fixed inset-0 z-0 ">
+    <div className="fixed inset-0 z-0">
       <Canvas camera={{ position: [0, 0, 2.5] }}>
         <Stars />
       </Canvas>

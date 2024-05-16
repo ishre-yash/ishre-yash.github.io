@@ -60,13 +60,7 @@ export default function HomePage() {
 
   return (
     <>
-      <div className="background-pattern" />
-      <motion.main
-        initial={{ width: 0 }}
-        animate={{ width: "100%" }}
-        exit={{ x: window.innerWidth, transition: { duration: 0.1 } }}
-        className="z-50 bg-background/15 backdrop-blur"
-      >
+      <main className="z-50 bg-background/15 backdrop-blur">
         <div className="relative flex min-h-screen items-center justify-center py-12 px-8">
           <section className="w-full max-w-md space-y-8 text-center sm:max-w-lg md:sm:max-w-2xl lg:sm:max-w-4xl">
             <motion.h1
@@ -136,7 +130,7 @@ export default function HomePage() {
             </div>
           </section>
         </div>
-      </motion.main>
+      </main>
     </>
   );
 }
