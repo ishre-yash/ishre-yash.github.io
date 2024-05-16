@@ -10,6 +10,8 @@ export default function PageHeader({
   children: React.ReactNode;
 }) {
   return (
+    <>
+
     <main className="z-50 py-10 flex flex-col items-center justify-center container pt-20 bg-background/15 backdrop-blur">
       <div className="max-w-sm  mx-auto mb-12 border rounded-2xl bg-background/15 backdrop-blur py-8 px-6 md:max-w-4xl">
         <h2
@@ -25,5 +27,6 @@ export default function PageHeader({
       </div>
       {children}
     </main>
+    </>
   );
 }
