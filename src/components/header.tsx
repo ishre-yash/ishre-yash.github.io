@@ -27,7 +27,7 @@ const NavLinkStyles =
 
 export default function Header() {
   return (
-    <nav className="fixed top-0 left-0 z-10 w-full">
+    <nav className="fixed top-0 left-0 z-50 w-full">
       <div className="mx-auto px-2 py-4 flex items-center justify-between">
         <MainMenu />
         <SettingsMenu />
