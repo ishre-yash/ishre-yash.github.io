@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 
 import { Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
-import useClick from "./lib/sound";
+import { useSound } from "./lib/sound";
 import Header from "./components/header";
 
 import useMyStore from "./store";
@@ -25,8 +25,7 @@ function App() {
     setColor(theme === "dark" ? "#ffffff" : "#000000");
   }, [theme]);
 
-  const [play] = useClick();
-  // useEvent("mousedown", () => play());
+  const { play } = useSound("/sounds/click.ogg", { volume: 0.05 });
 
   useEffect(() => {
     if (isSound) {
@@ -42,14 +41,16 @@ function App() {
     <>
       <Header />
       {isAnimation && (
-        <Particles
-          className="absolute inset-0"
-          quantity={1000}
-          ease={1}
-          size={1}
-          color={color}
-          refresh
-        />
+        <section className="fixed inset-0">
+          <Particles
+            className="absolute inset-0"
+            quantity={1000}
+            ease={1}
+            size={1}
+            color={color}
+            refresh
+          />
+        </section>
       )}
       <div className="background-pattern" />
       <React.Suspense fallback={<LoadingScreen />}>
