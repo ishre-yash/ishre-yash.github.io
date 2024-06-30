@@ -3,7 +3,6 @@ import React, { useEffect, useState } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import { useSound } from "./lib/sound";
-import Header from "./components/header";
 
 import useMyStore from "./store";
 import Particles from "./components/ui/particles";
@@ -39,8 +38,7 @@ function App() {
   }, [play, isSound]);
 
   return (
-    <>
-      <Header />
+    <React.Fragment>
       {isAnimation && (
         <section className="fixed inset-0">
           <Particles
@@ -51,9 +49,9 @@ function App() {
             color={color}
             refresh
           />
+          <div className="background-pattern" />
         </section>
       )}
-      <div className="background-pattern" />
       <React.Suspense fallback={<LoadingScreen />}>
         <AnimatePresence>
           <Routes location={location} key={location.pathname}>
@@ -65,7 +63,7 @@ function App() {
           </Routes>
         </AnimatePresence>
       </React.Suspense>
-    </>
+    </React.Fragment>
   );
 }
 

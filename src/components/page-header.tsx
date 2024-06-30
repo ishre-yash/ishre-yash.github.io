@@ -1,6 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Typography } from "./ui/typography";
+import Header from "./header";
+import CookiesDialog from "./cookies";
 
 const containerVariants = {
   hidden: { opacity: 0, y: -50 },
@@ -26,24 +28,28 @@ export default function PageHeader({
   children: React.ReactNode;
 }) {
   return (
-    <motion.main
-      className="py-10 flex flex-col items-center justify-center container pt-20"
-      initial="hidden"
-      animate="visible"
-      variants={containerVariants}
-    >
-      <motion.div
-        className="max-w-sm mx-auto mb-12 border rounded-2xl bg-background/15 backdrop-blur py-8 px-6 md:max-w-4xl"
-        variants={childVariants}
+    <React.Fragment>
+      <Header />
+      <CookiesDialog />
+      <motion.main
+        className="py-10 flex flex-col items-center justify-center container pt-20"
+        initial="hidden"
+        animate="visible"
+        variants={containerVariants}
       >
-        <Typography variant="h1" className="text-center">
-          {title}
-        </Typography>
-        <Typography variant="p" className="text-center">
-          {description}
-        </Typography>
-      </motion.div>
-      <motion.div variants={childVariants}>{children}</motion.div>
-    </motion.main>
+        <motion.div
+          className="max-w-sm mx-auto mb-12 border rounded-2xl bg-background/15 backdrop-blur py-8 px-6 md:max-w-4xl"
+          variants={childVariants}
+        >
+          <Typography variant="h1" className="text-center">
+            {title}
+          </Typography>
+          <Typography variant="p" className="text-center">
+            {description}
+          </Typography>
+        </motion.div>
+        <motion.div variants={childVariants}>{children}</motion.div>
+      </motion.main>
+    </React.Fragment>
   );
 }
