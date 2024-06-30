@@ -9,6 +9,7 @@ import useMyStore from "./store";
 import Particles from "./components/ui/particles";
 import { useTheme } from "next-themes";
 import LoadingScreen from "./components/loading-screen";
+import NotFoundPage from "./pages/not-found.page";
 
 const HomePage = React.lazy(() => import("./pages/home.page"));
 const ProjectsPage = React.lazy(() => import("./pages/projects.page"));
@@ -60,6 +61,7 @@ function App() {
             <Route path="/projects" element={<ProjectsPage />}></Route>
             <Route path="/timeline" element={<TimelinePage />}></Route>
             <Route path="/referrals" element={<ReferralsPage />}></Route>
+            <Route path="*" element={<NotFoundPage />}></Route>
           </Routes>
         </AnimatePresence>
       </React.Suspense>

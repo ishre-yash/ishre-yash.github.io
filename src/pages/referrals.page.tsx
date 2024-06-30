@@ -1,24 +1,42 @@
 import { useEffect } from "react";
+import { motion } from "framer-motion";
 import { ReferralsData } from "../data";
 import PageHeader from "../components/page-header";
 import { buttonVariants } from "../components/ui/button";
 import { cn } from "../lib/utils";
 import { AwardIcon, ExternalLinkIcon, HashIcon, HomeIcon } from "lucide-react";
 
+const listVariants = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1, transition: { staggerChildren: 0.1 } },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+};
+
 export default function ReferralsPage() {
   useEffect(() => {
     document.title = "ShreYash - Referrals";
   }, []);
+
   return (
     <PageHeader
       title="Referrals & Partnerships"
       description="Discover what my colleagues, clients, and collaborators have to say about working with me. These recommendations and referrals provide valuable insights into the quality of my work and the strong partnerships I've forged. Join me in celebrating the trust and appreciation that have fueled my journey in the tech world."
     >
-      <ul className="space-y-8 max-w-2xl w-full">
+      <motion.ul
+        className="space-y-8 max-w-2xl w-full"
+        initial="hidden"
+        animate="visible"
+        variants={listVariants}
+      >
         {ReferralsData.map((d, idx) => (
-          <li
+          <motion.li
             className="rounded-lg border bg-background/15 backdrop-blur transition duration-300 ease-in-out"
             key={idx}
+            variants={itemVariants}
           >
             <div className="flex flex-col items-center justify-between px-4 py-4 sm:flex-row sm:px-6">
               <div className="flex w-full flex-1 items-center justify-start">
@@ -99,9 +117,9 @@ export default function ReferralsPage() {
                 </div>
               </div>
             )}
-          </li>
+          </motion.li>
         ))}
-      </ul>
+      </motion.ul>
     </PageHeader>
   );
 }

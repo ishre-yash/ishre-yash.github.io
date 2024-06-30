@@ -10,6 +10,22 @@ import {
 } from "lucide-react";
 import { buttonVariants } from "../components/ui/button";
 import { cn } from "../lib/utils";
+import { motion } from "framer-motion";
+
+const fadeInUp = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0 },
+};
+
+const staggerContainer = {
+  hidden: { opacity: 1 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.3,
+    },
+  },
+};
 
 export default function TimelinePage() {
   useEffect(() => {
@@ -22,8 +38,16 @@ export default function TimelinePage() {
         title="My Journey"
         description="Step into my world and travel through time. This timeline captures the milestones, experiences, and adventures that have shaped my journey in the tech universe. From my earliest coding endeavors to my latest achievements, let's embark on this chronological adventure together."
       >
-        <section className="grid md:grid-cols-3 gap-8 items-center justify-center mb-8">
-          <section className="p-4 md:p-8 border rounded-2xl bg-background/15 backdrop-blur h-full transition duration-200 ease-in-out hover:-translate-y-1">
+        <motion.section
+          className="grid md:grid-cols-3 gap-8 items-center justify-center mb-8"
+          variants={staggerContainer}
+          initial="hidden"
+          animate="visible"
+        >
+          <motion.section
+            className="p-4 md:p-8 border rounded-2xl bg-background/15 backdrop-blur h-full transition duration-200 ease-in-out hover:-translate-y-1"
+            variants={fadeInUp}
+          >
             <div className="flex items-center justify-center">
               <div className="flex items-center justify-center rounded-full bg-primary/20 backdrop-blur p-2 w-12 h-12">
                 <ServerCogIcon size={24} className="text-primary" />
@@ -36,8 +60,11 @@ export default function TimelinePage() {
             <p className="text-center text-muted-foreground leading-7 [&:not(:first-child)]:mt-6">
               Years of experience in Full Stack Development.
             </p>
-          </section>
-          <section className="p-4 md:p-8 border rounded-2xl bg-background/15 backdrop-blur h-full transition duration-200 ease-in-out hover:-translate-y-1">
+          </motion.section>
+          <motion.section
+            className="p-4 md:p-8 border rounded-2xl bg-background/15 backdrop-blur h-full transition duration-200 ease-in-out hover:-translate-y-1"
+            variants={fadeInUp}
+          >
             <div className="flex items-center justify-center">
               <div className="flex items-center justify-center rounded-full bg-primary/20 backdrop-blur p-2 w-12 h-12">
                 <PencilRulerIcon size={24} className="text-primary" />
@@ -50,8 +77,11 @@ export default function TimelinePage() {
             <p className="text-center text-muted-foreground leading-7 [&:not(:first-child)]:mt-6">
               Years of experience in Design and UI/UX.
             </p>
-          </section>
-          <section className="p-4 md:p-8 border rounded-2xl bg-background/15 backdrop-blur h-full transition duration-200 ease-in-out hover:-translate-y-1">
+          </motion.section>
+          <motion.section
+            className="p-4 md:p-8 border rounded-2xl bg-background/15 backdrop-blur h-full transition duration-200 ease-in-out hover:-translate-y-1"
+            variants={fadeInUp}
+          >
             <div className="flex items-center justify-center">
               <div className="flex items-center justify-center rounded-full bg-primary/20 backdrop-blur p-2 w-12 h-12">
                 <SmartphoneIcon size={24} className="text-primary" />
@@ -64,11 +94,16 @@ export default function TimelinePage() {
             <p className="text-center text-muted-foreground leading-7 [&:not(:first-child)]:mt-6">
               Years of experience in Mobile Development.
             </p>
-          </section>
-        </section>
-        <ul className="max-w-2xl">
+          </motion.section>
+        </motion.section>
+        <motion.ul
+          className="max-w-2xl mx-auto"
+          variants={staggerContainer}
+          initial="hidden"
+          animate="visible"
+        >
           {TimelinesData.map((t, i) => (
-            <li className="my-1 group" key={i}>
+            <motion.li className="my-1 group" key={i} variants={fadeInUp}>
               <div className="relative pb-8">
                 {i !== TimelinesData.length - 1 && (
                   <span
@@ -123,9 +158,9 @@ export default function TimelinePage() {
                   </div>
                 </div>
               </div>
-            </li>
+            </motion.li>
           ))}
-        </ul>
+        </motion.ul>
       </PageHeader>
     </>
   );
