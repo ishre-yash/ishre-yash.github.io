@@ -1,5 +1,4 @@
 import React, { useEffect, useRef } from "react";
-import { differenceInYears } from "../lib/utils";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import Typed from "typed.js";
@@ -9,6 +8,7 @@ import { UserIcon } from "lucide-react";
 import { CopyIcon } from "lucide-react";
 import { GithubIcon } from "lucide-react";
 import Header from "../components/header";
+import { differenceInYears } from "date-fns";
 
 export default function HomePage() {
   const el = useRef(null);
@@ -18,15 +18,7 @@ export default function HomePage() {
 
   useEffect(() => {
     const typed = new Typed(el.current, {
-      strings: [
-        "Developer",
-        "UX Designer",
-        "Python",
-        "Next.js",
-        "Android Dev",
-        "DevOps",
-        "Typescript",
-      ],
+      strings: ["Developer", "UX Designer", "Android Dev", "DevOps", "AWS"],
       typeSpeed: 100,
       backSpeed: 100,
       loop: true,
@@ -38,6 +30,10 @@ export default function HomePage() {
     return () => {
       typed.destroy();
     };
+  }, []);
+
+  useEffect(() => {
+    document.title = "Shre Yash - Software Engineer";
   }, []);
 
   const button = [

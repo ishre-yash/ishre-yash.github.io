@@ -24,7 +24,7 @@ export default function PageHeader({
   children,
 }: {
   title: string;
-  description: string;
+  description?: string;
   children: React.ReactNode;
 }) {
   return (
@@ -38,15 +38,17 @@ export default function PageHeader({
         variants={containerVariants}
       >
         <motion.div
-          className="max-w-sm mx-auto mb-12 border rounded-2xl bg-background/15 backdrop-blur py-8 px-6 md:max-w-4xl"
+          className="max-w-sm mx-auto mb-12 border rounded-2xl bg-background/15 backdrop-blur py-8 px-6 md:max-w-4xl  min-w-2xl w-full"
           variants={childVariants}
         >
           <Typography variant="h1" className="text-center">
             {title}
           </Typography>
-          <Typography variant="p" className="text-center">
-            {description}
-          </Typography>
+          {description && (
+            <Typography variant="p" className="text-center">
+              {description}
+            </Typography>
+          )}
         </motion.div>
         <motion.div variants={childVariants}>{children}</motion.div>
       </motion.main>

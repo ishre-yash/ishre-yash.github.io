@@ -11,6 +11,7 @@ import {
 import { buttonVariants } from "../components/ui/button";
 import { cn } from "../lib/utils";
 import { motion } from "framer-motion";
+import formatDate, { calculateExperience } from "../lib/format-date";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
@@ -33,12 +34,9 @@ export default function TimelinePage() {
   }, []);
 
   return (
-    <PageHeader
-      title="My Journey"
-      description="Step into my world and travel through time. This timeline captures the milestones, experiences, and adventures that have shaped my journey in the tech universe. From my earliest coding endeavors to my latest achievements, let's embark on this chronological adventure together."
-    >
+    <PageHeader title="Timeline">
       <motion.section
-        className="grid md:grid-cols-3 gap-8 items-center justify-center mb-8"
+        className="grid md:grid-cols-3 gap-8 items-center justify-center mb-8 max-w-4xl"
         variants={staggerContainer}
         initial="hidden"
         animate="visible"
@@ -52,7 +50,7 @@ export default function TimelinePage() {
               <ServerCogIcon size={24} className="text-primary" />
             </div>
             <h2 className="text-4xl font-bold ml-2">
-              {new Date().getFullYear() - 2021}
+              {calculateExperience(new Date(2022, 1, 16))}
             </h2>
           </div>
 
@@ -69,7 +67,7 @@ export default function TimelinePage() {
               <PencilRulerIcon size={24} className="text-primary" />
             </div>
             <h2 className="text-4xl font-bold ml-2">
-              {new Date().getFullYear() - 2021}
+              {calculateExperience(new Date(2021, 9, 1))}
             </h2>
           </div>
 
@@ -86,7 +84,7 @@ export default function TimelinePage() {
               <SmartphoneIcon size={24} className="text-primary" />
             </div>
             <h2 className="text-4xl font-bold ml-2">
-              {new Date().getFullYear() - 2022}
+              {calculateExperience(new Date(2023, 3, 16))}
             </h2>
           </div>
 
@@ -130,7 +128,7 @@ export default function TimelinePage() {
                       )}
                     >
                       <CalendarIcon size={16} />
-                      {t.date}
+                      {formatDate(t.date, "MM/dd/yyyy", "long")}
                     </div>
                   </h3>
                   <p className="leading-7 text-muted-foreground [&:not(:first-child)]:mb-2">
