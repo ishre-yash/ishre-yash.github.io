@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import Typed from "typed.js";
 import { buttonVariants } from "../components/ui/button";
 import { cn } from "../lib/utils";
-import { UserIcon } from "lucide-react";
+import { ClockIcon } from "lucide-react";
 import { CopyIcon } from "lucide-react";
 import { GithubIcon } from "lucide-react";
 import Header from "../components/header";
@@ -38,9 +38,9 @@ export default function HomePage() {
 
   const button = [
     {
-      href: "/about",
-      icon: <UserIcon className="mr-3 size-4" />,
-      text: "About",
+      href: "/timeline",
+      icon: <ClockIcon className="mr-3 size-4" />,
+      text: "Timeline",
     },
     {
       href: "/projects",

@@ -15,11 +15,11 @@ import {
   ImageIcon,
   GithubIcon,
   LinkIcon,
-  TwitterIcon,
   HomeIcon,
   ClockIcon,
   CopyIcon,
   CookieIcon,
+  LinkedinIcon,
 } from "lucide-react";
 import { Button } from "./ui/button";
 
@@ -51,9 +51,9 @@ const menuItems = [
 
 const socialLinks = [
   {
-    href: "https://twitter.com/ishre_yash",
-    icon: <TwitterIcon className="mr-3 h-5 w-5" />,
-    text: "Twitter",
+    href: "https://www.linkedin.com/in/ishre-yash",
+    icon: <LinkedinIcon className="mr-3 h-5 w-5" />,
+    text: "Linkedin",
     iconLink: <LinkIcon className="mr-3 h-5 w-5" />,
   },
   {

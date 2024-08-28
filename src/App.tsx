@@ -11,7 +11,6 @@ import LoadingScreen from "./components/loading-screen";
 import NotFoundPage from "./pages/not-found.page";
 
 const HomePage = React.lazy(() => import("./pages/home.page"));
-const AboutPage = React.lazy(() => import("./pages/about.page"));
 const ProjectsPage = React.lazy(() => import("./pages/projects.page"));
 const TimelinePage = React.lazy(() => import("./pages/timeline.page"));
 const ReferralsPage = React.lazy(() => import("./pages/referrals.page"));
@@ -56,7 +55,6 @@ function App() {
         <AnimatePresence>
           <Routes location={location} key={location.pathname}>
             <Route path="/" element={<HomePage />}></Route>
-            <Route path="/about" element={<AboutPage />}></Route>
             <Route path="/projects" element={<ProjectsPage />}></Route>
             <Route path="/timeline" element={<TimelinePage />}></Route>
             <Route path="/referrals" element={<ReferralsPage />}></Route>

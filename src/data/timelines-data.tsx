@@ -8,7 +8,6 @@ import {
   GiftIcon,
   PencilRulerIcon,
   ServerCogIcon,
-  SmartphoneIcon,
 } from "lucide-react";
 
 export const TimelinesData = [
@@ -16,20 +15,28 @@ export const TimelinesData = [
     date: "09/01/2024",
     title: "Started Master's Degree",
     description:
-      "Embarked on my Master's journey in Computer Science at AKTU University, specializing in Computer Applications and Artificial Intelligence.",
+      "Started my Master's degree at AKTU University, focusing on Computer Applications and Artificial Intelligence.",
     icon: <BookIcon className="text-primary w-10" />,
   },
   {
-    date: "10/05/2024",
-    title: "Completed Bachelor's Degree!",
+    date: "05/10/2024",
+    title: "Earned Bachelor's Degree",
     description:
-      "Graduated with a Bachelor's degree in Computer Science, achieving a commendable 76%.",
+      "Graduated with a Bachelor's degree in Computer Science, achieving a notable 76%.",
     icon: <AwardIcon className="text-primary w-10" />,
   },
   {
+    date: "04/07/2024",
+    title: "HackOFiesta 2024 - Runner-Up",
+    description:
+      "Achieved Runner-Up in HackOFiesta v5 Hackathon at IIIT Lucknow, demonstrating advanced coding and teamwork skills in a competitive environment.",
+    icon: <BrainCircuitIcon className="text-primary w-10" />,
+  },
+  {
     date: "02/03/2024",
-    title: "Started @ Troology",
-    description: "Joined the Troology team",
+    title: "Joined Troology",
+    description:
+      "Became a member of the Troology team as a software developer.",
     icon: <BriefcaseIcon className="text-primary w-10" />,
     link: {
       text: "Visit Troology",
@@ -37,28 +44,42 @@ export const TimelinesData = [
     },
   },
   {
-    date: "04/16/2023",
-    title: "React Native Bootcamp",
+    date: "09/02/2023",
+    title: "UHackathon 4.0 - 2nd Runner-Up",
     description:
-      "Successfully completed React Native Bootcamp Professional Certificate from Academind, Course instructor - Maximilian Schwarzmüller",
+      "Secured the 2nd Runner-Up position in the prestigious UHackathon 4.0 at UPES, showcasing innovative problem-solving and coding skills.",
+    icon: <BrainCircuitIcon className="text-primary w-10" />,
+  },
+  {
+    date: "05/24/2023",
+    title: "College Fest Organizer",
+    description:
+      "Played a key role in organizing and managing the college fest, ensuring the event's success through effective coordination and teamwork.",
+    icon: <BriefcaseIcon className="text-primary w-10" />,
+  },
+  {
+    date: "04/16/2023",
+    title: "React Native Bootcamp Completion",
+    description:
+      "Completed the React Native Bootcamp, earning a Professional Certificate under Maximilian Schwarzmüller at Academind.",
     icon: <AwardIcon className="text-primary w-10" />,
   },
   {
     date: "08/29/2022",
-    title: "Founded @ Aagadi",
+    title: "Founded Aagadi.com",
     description:
-      "Founded aagadi.com with collage friends with the vision of providing SASS Business.",
+      "Co-founded Aagadi.com with college peers, aiming to deliver SaaS business solutions.",
     icon: <BriefcaseIcon className="text-primary w-10" />,
     link: {
-      text: "Visit aagadi.com",
+      text: "Visit Aagadi.com",
       url: "https://aagadi.com/",
     },
   },
   {
     date: "06/10/2022",
-    title: "Started @ Hirable.me",
+    title: "Internship at Hirable.me",
     description:
-      "Joined the Hirable.me team as Full-stack Developer for 3 month internship.",
+      "Joined Hirable.me as a Full-stack Developer for a 3-month internship.",
     icon: <BriefcaseIcon className="text-primary w-10" />,
     link: {
       text: "Visit Hirable.me",
@@ -67,16 +88,16 @@ export const TimelinesData = [
   },
   {
     date: "05/30/2021",
-    title: "Web Developer Bootcamp",
+    title: "Completed Web Developer Bootcamp",
     description:
-      "Successfully completed Web Developer Bootcamp Professional Certificate, Course instructor - Colt Steele ",
+      "Earned a Professional Certificate in Web Development, guided by Colt Steele.",
     icon: <AwardIcon className="text-primary w-10" />,
   },
   {
     date: "03/21/2022",
-    title: "First Developer Role",
+    title: "First Developer Internship",
     description:
-      "Began an internship as a junior developer & designer working at DMarketingGuru",
+      "Started as a junior developer & designer intern at DMarketingGuru.",
     icon: <BriefcaseIcon className="text-primary w-10" />,
     link: {
       text: "Visit DMarketingGuru",
@@ -85,23 +106,23 @@ export const TimelinesData = [
   },
   {
     date: "02/16/2022",
-    title: "Backend Journey Started",
+    title: "Began Backend Development",
     description:
-      "Started learning backend development with Node.js & Express.js, Course instructor - Colt Steele ",
+      "Started learning backend development with Node.js & Express.js, taught by Colt Steele.",
     icon: <ServerCogIcon className="text-primary w-10" />,
   },
   {
     date: "01/03/2022",
     title: "Started Learning React",
     description:
-      "Started learning React & Next.js, Course instructor - Colt Steele ",
+      "Began learning React & Next.js, under the instruction of Colt Steele.",
     icon: <AtomIcon className="text-primary w-10" />,
   },
   {
     date: "12/30/2021",
-    title: "Google UX Design",
+    title: "Google UX Design Certificate",
     description:
-      "Successfully completed Google UX Design Professional Certificate from Coursera",
+      "Successfully completed the Google UX Design Professional Certificate on Coursera.",
     icon: <AwardIcon className="text-primary w-10" />,
     link: {
       text: "Show credential",
@@ -110,35 +131,35 @@ export const TimelinesData = [
   },
   {
     date: "11/02/2021",
-    title: "First Wireframe",
+    title: "First Wireframe Design",
     description:
-      "Created my first wireframe & prototype for user interface design using Figma",
+      "Designed my first wireframe and prototype for a user interface using Figma.",
     icon: <PencilRulerIcon className="text-primary w-10" />,
   },
   {
     date: "08/04/2021",
-    title: "First Website",
+    title: "First Website Development",
     description:
-      "Created my first website for my college project using HTML, CSS",
+      "Developed my first website for a college project using HTML and CSS.",
     icon: <FlameIcon className="text-primary w-10" />,
   },
   {
     date: "08/01/2021",
-    title: "Start College",
+    title: "Started Bachelor's Degree",
     description:
-      "Began studying Bachelors's in Computer Science &  Computer Application & Programming (BCA) at DIT",
+      "Began studying for a Bachelor's degree in Computer Science & Computer Application at DIT.",
     icon: <BookIcon className="text-primary w-10" />,
   },
   {
     date: "06/01/2021",
-    title: "Complete Schooling!",
-    description: "Successfully completed my 12th with 78%",
+    title: "Completed Schooling",
+    description: "Graduated high school with a 78% score.",
     icon: <AwardIcon className="text-primary w-10" />,
   },
   {
     date: "03/12/2005",
-    title: "Birthday!",
-    description: "I was born the 12th of March 2005",
+    title: "Born!",
+    description: "Entered the world on March 12th, 2005.",
     icon: <GiftIcon className="text-primary w-10" />,
   },
 ];
