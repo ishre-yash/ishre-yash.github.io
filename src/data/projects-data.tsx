@@ -8,6 +8,7 @@ export const ProjectsData = [
   },
   {
     logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDzZCDxhPNIbRBx1P7PC0m57cgyaYXevhLPg&s",
+    img: "",
     title: "CivitBUILD: Transforming Construction Management",
     description:
       "I contributed to the development of CivitBUILD, an innovative enterprise solution designed for the construction industry. This cloud-based platform streamlines project management, resource allocation, and financial oversight, providing organizations with the tools they need to manage operations efficiently. \nAs part of the project, I developed key modules within the CivitBUILD web application, enhancing its ability to deliver dynamic reporting, scalable architecture, and seamless integration with industry-standard tools. This project played a pivotal role in helping construction firms avoid cost and time overruns while improving overall business visibility and control.",
