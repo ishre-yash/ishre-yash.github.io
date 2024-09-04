@@ -18,7 +18,7 @@ export default function HomePage() {
 
   useEffect(() => {
     const typed = new Typed(el.current, {
-      strings: ["Developer", "UX Designer", "Android Dev", "DevOps", "AWS"],
+      strings: ["Developer", "Android Dev", "DevOps"],
       typeSpeed: 100,
       backSpeed: 100,
       loop: true,
